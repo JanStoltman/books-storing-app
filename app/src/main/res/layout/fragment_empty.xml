@@ -6,11 +6,20 @@
     tools:context=".ui.main.EmptyFragment">
 
     <TextView
+        android:id="@+id/emptyTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/add_new_books"
         android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/addBookButton"
+        android:src="@drawable/ic_plus"
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </FrameLayout>

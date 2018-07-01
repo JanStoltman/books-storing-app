@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yggdralisk.booksstorage.R
+import com.yggdralisk.booksstorage.model.BookModel
+import com.yggdralisk.booksstorage.ui.main.adapter.BooksRecyclerAdapter
+import com.yggdralisk.booksstorage.ui.main.provider.BooksProvider
+import kotlinx.android.synthetic.main.fragment_books_list.*
 
-class ListFragment : Fragment() {
-
+class ListFragment : Fragment(), BooksProvider {
     companion object {
         fun newInstance() = ListFragment()
     }
@@ -24,6 +28,8 @@ class ListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = getMainViewModel()
+        booksRecyclerView.layoutManager = LinearLayoutManager(context)
+        booksRecyclerView.adapter = BooksRecyclerAdapter(this)
     }
 
     private fun getMainViewModel(): MainViewModel {
@@ -35,4 +41,9 @@ class ListFragment : Fragment() {
         }
     }
 
+    override fun getBooks(): ArrayList<BookModel> = viewModel.getBooks().value ?: arrayListOf()
+
+    override fun getDataSize(): Int = viewModel.getBooks().value?.size ?: 0
+
+    override fun getBook(index: Int): BookModel? = viewModel.getBooks().value?.get(index)
 }

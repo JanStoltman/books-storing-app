@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.yggdralisk.booksstorage.model.BookModel
 import io.realm.Realm
 import io.realm.RealmResults
+import timber.log.Timber
 
 class MainViewModel : ViewModel() {
     private lateinit var books: MutableLiveData<ArrayList<BookModel>>
@@ -27,6 +28,7 @@ class MainViewModel : ViewModel() {
             realmBooks = realm.where(BookModel::class.java).findAll()
 
             realmBooks.addChangeListener { results, _ ->
+                Timber.d("New database books results. Size: ${results.size}")
                 books.value?.addAll(results)
             }
         }
