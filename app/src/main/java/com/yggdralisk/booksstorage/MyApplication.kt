@@ -5,6 +5,7 @@ import com.evernote.android.state.StateSaver
 import io.realm.Realm
 import timber.log.Timber
 
+@Suppress("unused")
 class MyApplication: Application(){
     override fun onCreate() {
         super.onCreate()

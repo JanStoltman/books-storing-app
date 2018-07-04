@@ -10,16 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:drawableBottom="@drawable/ic_plus"
         android:gravity="center"
+        android:drawableTint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
         android:text="@string/add_new_books"
         android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/addBookButton"
-        android:src="@drawable/ic_plus"
-        android:layout_gravity="bottom"
-        android:background="@color/colorAccent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </FrameLayout>

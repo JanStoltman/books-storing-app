@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:foregroundGravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/labelTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:layout_weight="0.4"
+        android:background="@color/colorPrimaryLightBackground"
+        android:gravity="center_horizontal"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/labelTextSize" />
+
+    <FrameLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="0.6"
+        android:foregroundGravity="center"
+        android:padding="5dp" />
+
+</LinearLayout>

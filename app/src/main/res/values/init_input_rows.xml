@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="initInputRows">
+        <item>{"inputType":"TEXT","labelText":"Book"}</item>
+        <item>{"inputType":"TEXT","labelText":"Authors($%)name"}</item>
+        <item>{"inputType":"PHOTO","labelText":"Front($%)cover"}</item>
+    </array>
+</resources>

@@ -27,9 +27,10 @@ class MainViewModel : ViewModel() {
 
             realmBooks = realm.where(BookModel::class.java).findAll()
 
-            realmBooks.addChangeListener { results, _ ->
+            realmBooks.addChangeListener { results, changeSet ->
                 Timber.d("New database books results. Size: ${results.size}")
-                books.value?.addAll(results)
+                books.value?.removeAll(results.slice(changeSet.deletions.toList()))
+                books.value?.addAll(results.slice(changeSet.insertions.toList()))
             }
         }
     }

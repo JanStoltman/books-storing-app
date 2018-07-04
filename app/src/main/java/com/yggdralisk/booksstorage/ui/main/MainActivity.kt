@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.gson.Gson
 import com.yggdralisk.booksstorage.R
 import com.yggdralisk.booksstorage.model.BookModel
+import com.yggdralisk.booksstorage.model.InputRow
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
                 displayListFragment()
             }
         })
+
+        Timber.d(Gson().toJson(InputRow("Label dupa dd", InputRow.InputType.TEXT.toString())))
     }
 
     private fun displayEmptyFragment() {
